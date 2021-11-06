@@ -4,6 +4,7 @@ COPY upstride /opt/upstride/upstride
 COPY setup.py /opt/upstride/setup.py
 COPY version /opt/upstride/version
 COPY README.md /opt/upstride/README.md
+RUN pip install --upgrade pip
 RUN cd /opt/upstride && \
     pip install . && \
     cd / && \
