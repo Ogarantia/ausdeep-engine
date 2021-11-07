@@ -11,5 +11,6 @@ RUN /usr/bin/python3 -m pip install --upgrade pip && \
 FROM tensorflow/tensorflow:2.4.1-gpu
 
 COPY --from=builder /opt/upstride/dist/ /opt/dist
+RUN pip3 install --upgrade pip
 RUN pip3 install --no-cache-dir /opt/dist/*.whl && \
     rm -r /opt/dist
