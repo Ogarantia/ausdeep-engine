@@ -14,11 +14,21 @@ VOLUME     = /opt/ausdeep-engine
 # Build development container.
 .PHONY: build
 build:
+    # Symbolic link to dockerfiles
+	rm dockerfile 
+
+	ln -s dockerfiles/dockerfile.$(TF) dockerfile
+
 	docker build -t $(IMG_DEV) -f dockerfile .
 
 # Build cython container.
 .PHONY: build_cython
 build_cython:
+    # Symbolic link to dockerfiles
+	rm dockerfile.cython
+	
+	ln -s dockerfiles/dockerfile.$(TF).cython dockerfile.cython
+
 	docker build -t $(IMG_CYTHON) -f dockerfile.cython .
 
 # Run container (cython).
@@ -26,5 +36,5 @@ build_cython:
 run:
 	@docker run -it --rm --gpus all \
 		-v ${PWD}:$(VOLUME) \
-		$(IMG_CYTHON) \
+		$(IMG_DEV) \
 		bash
