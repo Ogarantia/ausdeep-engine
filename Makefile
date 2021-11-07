@@ -36,5 +36,5 @@ build_cython:
 run:
 	@docker run -it --rm --gpus all \
 		-v ${PWD}:$(VOLUME) \
-		$(IMG_DEV) \
+		$(IMG_CYTHON) \
 		bash
