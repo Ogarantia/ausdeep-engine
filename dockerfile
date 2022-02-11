@@ -1,1 +1,1 @@
-dockerfiles/dockerfile.tf2.3.0
+dockerfiles/dockerfile.tf2.7.0

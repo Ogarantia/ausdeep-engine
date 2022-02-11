@@ -3,7 +3,7 @@ PROJECT    = ausdeep/engine
 NAME       = $(COMPANY)$(PROJECT)
 COMMIT     = $(shell git log -1 --pretty=%h)
 VERSION    = 0.1.0
-TF         = tf2.4.1
+TF         = tf2.7.0
 DEVICE     = gpu
 TAG        = $(VERSION)-$(TF)-$(DEVICE)
 IMG_DEV    = ghcr.io/$(NAME):py-$(TAG)
