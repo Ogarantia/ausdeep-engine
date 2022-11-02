@@ -1,1 +1,1 @@
-dockerfiles/dockerfile.tf2.7.0
+dockerfiles/dockerfile.tf2.8.3.cpu
