@@ -1,1 +1,1 @@
-dockerfiles/dockerfile.tf2.8.3.gpu.cython
+dockerfiles/dockerfile.tf2.8.3.cpu.cython

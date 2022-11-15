@@ -1,4 +1,4 @@
-FROM tensorflow/tensorflow:2.8.3-cpu AS builder
+FROM tensorflow/tensorflow:2.8.3 AS builder
 
 COPY upstride /opt/upstride/upstride
 COPY cython_setup.py /opt/upstride/cython_setup.py
@@ -8,7 +8,7 @@ RUN /usr/bin/python3 -m pip install --upgrade pip && \
     cd /opt/upstride && \
     python3 cython_setup.py bdist_wheel
 
-FROM tensorflow/tensorflow:2.8.3-gpu
+FROM tensorflow/tensorflow:2.8.3
 
 COPY --from=builder /opt/upstride/dist/ /opt/dist
 RUN pip3 install --upgrade pip
